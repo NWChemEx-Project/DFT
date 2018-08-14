@@ -1,6 +1,7 @@
-INCLUDES = -I../include
 
-include ../arch.mac
+include config/makefile.h
+
+SUBDIRS =  n2pw
 
 OBJECTS	= cpsd.o inner_loop.o Kinetic.o Coulomb.o Pseudopotential.o Ion.o Ewald.o Pneb.o PGrid.o Strfac.o Balance.o lattice.o d3db.o Mapping3.o hilbert.o d1db.o Mapping1.o Parallel.o psi.o v_exc.o util_date.o control.o rtdb.o rtdb_seq.o hdbm.o compressed_io.o util.o
 
