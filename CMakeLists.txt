@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 project(dft VERSION 1.0.0)
 find_package(cpp REQUIRED)
-cpp_option(BUILD_TESTS OFF)
+cpp_option(BUILD_TESTS ON)
 
 cpp_find_or_build_dependency(
         NAME integrals

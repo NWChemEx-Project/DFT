@@ -1,4 +1,11 @@
-cmake_minimum_required(VERSION 3.1)
-project(DFT-Test VERSION 0.0.0 LANGUAGES CXX)
-find_package(DFT REQUIRED)
-include(TargetMacros)
+set(DFT_TESTS test_dft.cpp
+
+)
+
+cpp_add_executable(
+    test_dft
+    SOURCES ${DFT_TESTS}
+    DEPENDS dft Catch2::Catch2
+)
+
+add_test(NAME test_dft COMMAND test_dft)
