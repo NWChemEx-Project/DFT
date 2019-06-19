@@ -1,10 +1,20 @@
-cmake_minimum_required(VERSION 3.1)
-project(DFT-SRC VERSION 0.0.0 LANGUAGES CXX Fortran C)
-include(TargetMacros)
-set(DFT_SRCS )
-set(DFT_INCLUDES )
-set(DFT_DEFINITIONS )
-nwchemex_add_library(DFT DFT_SRCS
-                                 DFT_INCLUDES
-                                 DFT_DEFINTIONS
+
+
+set(DFT_SRCS dft.cpp
+             nwpw/nwpw.cpp
 )
+
+set(DFT_INCLUDES dft.hpp
+              nwpw/nwpw.hpp
+)
+
+cpp_add_library(
+    dft
+    SOURCES ${DFT_SRCS}
+    INCLUDES ${DFT_INCLUDES}
+    DEPENDS libmathematician::mathematician integrals::integrals
+)
+
+cpp_install(TARGETS dft)
+
+
